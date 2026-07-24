@@ -1,0 +1,119 @@
+aid: npp-australia
+url: https://raw.githubusercontent.com/api-evangelist/npp-australia/refs/heads/main/apis.yml
+name: NPP Australia (AP+)
+kind: company
+description: >-
+  NPP Australia is the operator of the New Payments Platform (NPP), Australia's
+  national real-time, data-rich, account-to-account payments infrastructure that
+  settles 24 hours a day, 365 days a year across more than 100 connected banks,
+  credit unions, fintechs and government agencies. Since 2021 NPP Australia has
+  been a wholly owned subsidiary of Australian Payments Plus (AP+), the entity
+  formed by amalgamating NPP Australia, BPAY Group and eftpos. On top of the core
+  clearing-and-settlement rail, NPP operates two overlay services: PayID, an
+  addressing service that maps a mobile number, email, ABN or organisation ID to
+  a bank account, and PayTo, a real-time mandated-debit capability that gives
+  consumers visibility and control over recurring and one-off account debits.
+  Its home market is Australia, and it sits alongside the Consumer Data Right as
+  the country's payments spine. Its API posture is that of a scheme and rail
+  operator rather than a self-serve PSP: NPP Australia itself does not sell a
+  public API, but it publishes the ISO 20022-aligned NPP API Framework that
+  defines the mandatory technical approach and data attributes NPP Participants
+  implement, and AP+ runs a (registration-gated) developer portal plus a
+  SWIFT-hosted API sandbox. The consumable APIs are offered by NPP Participants,
+  not by NPP Australia.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Payments
+- Australia
+- Real-Time Payments
+- Account-to-Account
+- ISO 20022
+- Payment Scheme
+- Rails
+- PayTo
+- PayID
+- Open Banking
+created: '2026-07-24'
+modified: '2026-07-24'
+specificationVersion: '0.19'
+apis:
+- aid: npp-australia:npp-api-framework
+  name: NPP API Framework
+  description: >-
+    The NPP API Framework defines the mandatory technical approach and data
+    attributes for APIs built on the New Payments Platform, aligned to the ISO
+    20022 messaging standard. NPP Australia does not itself operate a consumable
+    API; the framework governs how NPP Participants expose and integrate real-time
+    payment capabilities. Published as a versioned specification document (v5.0),
+    not a self-serve REST API with a public base URL.
+  humanURL: https://www.auspayplus.com.au/solutions/npp-for-developers
+  tags:
+  - ISO 20022
+  - Real-Time Payments
+  - Framework
+  properties:
+  - type: Documentation
+    url: https://www.auspayplus.com.au/solutions/npp-for-developers
+  - type: APIReference
+    url: https://www.auspayplus.com.au/wp-content/uploads/2024/06/NPP-API-Framework-v5.0.pdf
+  - type: Sandbox
+    url: https://nppa-developer.swift.com/user/register
+- aid: npp-australia:payto
+  name: PayTo
+  description: >-
+    PayTo is NPP's real-time, digital mandated-debit overlay service. It lets
+    businesses initiate real-time payments from a customer's bank account under a
+    pre-authorised agreement, giving consumers visibility and control over
+    recurring and one-off debits. Delivered through NPP Participants using
+    ISO 20022 messaging and the PayTo messaging toolkit; NPP Australia publishes
+    the service documentation and toolkit rather than a self-serve public API.
+  humanURL: https://www.auspayplus.com.au/solutions/payto
+  tags:
+  - PayTo
+  - Mandated Debit
+  - Real-Time Payments
+  properties:
+  - type: Documentation
+    url: https://www.auspayplus.com.au/solutions/payto
+- aid: npp-australia:payid
+  name: PayID
+  description: >-
+    PayID is NPP's addressing service, allowing payments to be directed using a
+    simple identifier such as a mobile number, email address, ABN or organisation
+    ID instead of a BSB and account number. It is implemented by NPP Participants
+    over the New Payments Platform; NPP Australia publishes the PayID service
+    documentation and messaging toolkit rather than a consumable public API.
+  humanURL: https://www.auspayplus.com.au/solutions/payid
+  tags:
+  - PayID
+  - Addressing
+  - Real-Time Payments
+  properties:
+  - type: Documentation
+    url: https://www.auspayplus.com.au/solutions/payid
+common:
+- type: Website
+  url: https://www.auspayplus.com.au/solutions/npp
+- type: DeveloperPortal
+  url: https://www.developers.auspayplus.com.au/
+- type: Documentation
+  url: https://www.auspayplus.com.au/solutions/npp-for-developers
+- type: APIReference
+  url: https://www.developers.auspayplus.com.au/apis/
+- type: Sandbox
+  url: https://nppa-developer.swift.com/user/register
+- type: SignUp
+  url: https://www.developers.auspayplus.com.au/api/auth/signup/
+- type: Login
+  url: https://www.developers.auspayplus.com.au/api/auth/login/
+- type: Blog
+  url: https://www.auspayplus.com.au/news
+- type: LinkedIn
+  url: https://www.linkedin.com/company/auspayplus/
+- type: TermsOfService
+  url: https://www.auspayplus.com.au/terms-of-use
+- type: PrivacyPolicy
+  url: https://www.auspayplus.com.au/privacy-policy
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

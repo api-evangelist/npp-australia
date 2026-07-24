@@ -1,0 +1,140 @@
+aid: npp-australia
+name: NPP Australia (AP+)
+review:
+  question: >-
+    Does NPP Australia publish a consumable public self-serve API with a
+    downloadable OpenAPI/Swagger specification?
+  answer: false
+  date: '2026-07-24'
+  reviewer: API Evangelist
+findings:
+  summary: >-
+    NPP Australia is the operator of the New Payments Platform (NPP), Australia's
+    national real-time account-to-account rail, and since 2021 a wholly owned
+    subsidiary of Australian Payments Plus (AP+). Its public developer surface is
+    documentation-, framework- and rulebook-first, not a self-serve API. The
+    NPP "for developers" page states plainly that "NPP Australia does not offer
+    APIs, but many NPP Participants do." What NPP Australia publishes is the ISO
+    20022-aligned NPP API Framework (v5.0, PDF) that governs how Participants build
+    NPP APIs; a registration-gated AP+ developer portal
+    (developers.auspayplus.com.au, unified across the former NPP/BPAY/eftpos
+    portals, Auth0-backed login); a SWIFT-hosted API sandbox at
+    nppa-developer.swift.com; and PayID/PayTo overlay-service documentation and
+    messaging toolkits. No downloadable public OpenAPI/Swagger, GraphQL SDL,
+    Postman collection, or AsyncAPI was found; the consumable APIs are exposed by
+    NPP Participants (banks and connected fintechs), not by NPP Australia. This is
+    the expected posture for a domestic real-time rail / scheme operator.
+  homeMarket: Australia
+  tier: rails-scheme
+  primaryDomain: nppa.com.au
+  domainBehavior: >-
+    nppa.com.au and www.nppa.com.au both HTTP 200 but redirect to
+    https://www.auspayplus.com.au/solutions/npp (AP+ has consolidated the NPP web
+    presence under auspayplus.com.au).
+  developerPortal:
+    url: https://www.developers.auspayplus.com.au/
+    httpStatus: 200
+    confirmed: true
+    note: >-
+      Live AP+ developer portal (SPA, Auth0 login at /api/auth/login). Exposes
+      /apis/, /docs/, /faqs/, /contact-us/ sections; actual API listings and specs
+      are behind registration. Covers NPP plus the migrated BPAY and eftpos
+      platforms.
+  downloadableSpecs:
+    found: false
+    openapiCount: 0
+    note: >-
+      No OpenAPI/Swagger served. Probed developers.auspayplus.com.au/openapi.json
+      (404). The published machine-relevant artifact is the NPP API Framework v5.0
+      PDF (technical framework, not a parseable OpenAPI document).
+  iso20022:
+    aligned: true
+    note: >-
+      The NPP API Framework and NPP messaging are aligned to ISO 20022. PayID
+      (addressing) and PayTo (mandated debit) overlay services ride the same
+      ISO 20022 rail via participant institutions.
+  overlayServices:
+    - name: PayID
+      type: Addressing service (mobile/email/ABN/orgID to account)
+      docs: https://www.auspayplus.com.au/solutions/payid
+      httpStatus: 200
+    - name: PayTo
+      type: Real-time mandated / pull debit
+      docs: https://www.auspayplus.com.au/solutions/payto
+      httpStatus: 200
+  authModel:
+    scheme: >-
+      No public API auth model published by NPP Australia itself. Participant
+      connectivity to the platform is via SWIFT infrastructure with ISO 20022
+      messaging; the AP+ developer portal and SWIFT sandbox require account
+      registration/login (Auth0 on the portal). No anonymous OAuth/OIDC discovery
+      documents apply at the scheme level.
+    wellKnownProbed: false
+    note: >-
+      NPP Australia hosts no public API host serving
+      /.well-known/openid-configuration or /.well-known/oauth-authorization-server;
+      it is a scheme operator, so consumer-facing auth is defined by each NPP
+      Participant, not by NPP Australia.
+  webhooksEvents:
+    found: false
+    note: >-
+      No public webhook/event catalog or AsyncAPI published by NPP Australia. NPP
+      is a message-based real-time rail (ISO 20022); event delivery to end users is
+      a Participant implementation concern.
+  postman:
+    found: false
+  transports:
+    - protocol: ISO 20022 messaging (scheme rail)
+      documented: true
+      note: >-
+        NPP core is real-time ISO 20022 message clearing/settlement carried over
+        SWIFT infrastructure between Participants. Not a public HTTP API.
+    - protocol: REST
+      documented: false
+      note: >-
+        No public NPP Australia REST API host or base URL is published. Consumable
+        REST APIs for NPP/PayID/PayTo are offered by NPP Participants under the
+        NPP API Framework.
+sources:
+  - url: https://www.auspayplus.com.au/solutions/npp
+    type: Website
+    httpStatus: 200
+    note: NPP overview; nppa.com.au redirects here.
+  - url: https://www.auspayplus.com.au/solutions/npp-for-developers
+    type: Documentation
+    httpStatus: 200
+    note: >-
+      States "NPP Australia does not offer APIs, but many NPP Participants do";
+      links the NPP API Framework and the SWIFT sandbox.
+  - url: https://www.auspayplus.com.au/wp-content/uploads/2024/06/NPP-API-Framework-v5.0.pdf
+    type: APIReference
+    httpStatus: 200
+    note: NPP API Framework v5.0, ISO 20022-aligned technical framework (PDF).
+  - url: https://www.developers.auspayplus.com.au/
+    type: DeveloperPortal
+    httpStatus: 200
+    note: AP+ developer portal (gated); /apis/ /docs/ /faqs/ all HTTP 200.
+  - url: https://nppa-developer.swift.com/user/register
+    type: Sandbox
+    note: >-
+      SWIFT-hosted NPP API sandbox registration; referenced from the NPP
+      for-developers page (host did not respond to anonymous curl probe).
+  - url: https://www.auspayplus.com.au/solutions/payto
+    type: Documentation
+    httpStatus: 200
+    note: PayTo overlay service.
+  - url: https://www.auspayplus.com.au/solutions/payid
+    type: Documentation
+    httpStatus: 200
+    note: PayID overlay service.
+actions:
+  apisYmlCreated: true
+  openapiHarvested: false
+  specsCount: 0
+  status: built-stub
+  reason: >-
+    Identity captured with an honest docs/framework-first record. NPP Australia is
+    a real-time rail / scheme operator that publishes an ISO 20022-aligned API
+    framework, a gated developer portal, a SWIFT sandbox, and PayID/PayTo service
+    docs, but no downloadable public OpenAPI and no self-serve API of its own
+    (consumable APIs come from NPP Participants).
