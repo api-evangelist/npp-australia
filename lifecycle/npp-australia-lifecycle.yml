@@ -1,0 +1,32 @@
+generated: '2026-07-24'
+method: searched
+source: >-
+  https://www.developers.auspayplus.com.au/apis/ +
+  https://www.auspayplus.com.au/solutions/npp-for-developers
+notes: >-
+  Versioning is document/spec-versioned rather than URI-path versioned. NPP
+  Australia publishes the NPP API Framework as a versioned specification (v5.0
+  PDF is current), and the AP+ developer portal serves OAS3 documents for the
+  NPP API Framework at v1.0.4 / v1.0.5 / v1.0.6 and a v3 OAS/swagger spec for the
+  BPAY APIs (registration-gated). No public status page, published SLA, or formal
+  deprecation/Sunset-header policy was found on the public surface, so no
+  StatusPage or Deprecation pointer is emitted.
+versioning:
+  scheme: document-version
+  frameworks:
+  - name: NPP API Framework
+    current: v5.0
+    docs: https://www.auspayplus.com.au/wp-content/uploads/2024/06/NPP-API-Framework-v5.0.pdf
+    oas_versions_published: [v1.0.4-oas3, v1.0.5, v1.0.6]
+    oas_access: registration-gated (developers.auspayplus.com.au)
+  - name: BPAY APIs
+    current: v3
+    oas_access: registration-gated
+    note: "OAS/swagger spec for v3 of the API is available in the developer portal"
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+sla:
+  url: null
+status_page: null
+deprecated_operations: []

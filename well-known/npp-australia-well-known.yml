@@ -1,0 +1,41 @@
+generated: '2026-07-24'
+method: searched
+source: live probes of AP+ developer-portal auth host and auspayplus.com.au
+notes: >-
+  NPP Australia (AP+) does not operate a consumable API host of its own; its
+  machine-readable discovery surface is the AP+ developer-portal login tenant
+  (Auth0 custom domain auth.developers.auspayplus.com.au) plus a root
+  security.txt on the corporate site. The OIDC scopes advertised are the
+  standard OpenID identity scopes for portal login, not payment-API scopes
+  (those specs are registration-gated).
+hosts:
+- host: https://auth.developers.auspayplus.com.au
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: npp-australia-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: npp-australia-oauth-authorization-server.json
+  - path: /.well-known/jwks.json
+    status: 200
+    file: null
+- host: https://www.auspayplus.com.au
+  documents:
+  - path: /security.txt
+    status: 200
+    file: npp-australia-security.txt
+  - path: /.well-known/security.txt
+    status: 404
+- host: https://www.developers.auspayplus.com.au
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /api-catalog
+    status: 404
+  - path: /ai-plugin.json
+    status: 404

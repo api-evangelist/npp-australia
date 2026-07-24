@@ -35,7 +35,7 @@ tags:
 - Open Banking
 created: '2026-07-24'
 modified: '2026-07-24'
-specificationVersion: '0.19'
+specificationVersion: '0.20'
 apis:
 - aid: npp-australia:npp-api-framework
   name: NPP API Framework
@@ -92,6 +92,10 @@ apis:
   - type: Documentation
     url: https://www.auspayplus.com.au/solutions/payid
 common:
+- type: VulnerabilityDisclosure
+  url: security/npp-australia-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/npp-australia-domain-security.yml
 - type: Website
   url: https://www.auspayplus.com.au/solutions/npp
 - type: DeveloperPortal
@@ -114,6 +118,26 @@ common:
   url: https://www.auspayplus.com.au/terms-of-use
 - type: PrivacyPolicy
   url: https://www.auspayplus.com.au/privacy-policy
+- type: GettingStarted
+  url: https://www.developers.auspayplus.com.au/go-live/
+- type: Support
+  url: https://www.developers.auspayplus.com.au/contact-us/
+- type: GitHubOrganization
+  url: https://github.com/auspayplus
+- type: WellKnown
+  url: well-known/npp-australia-well-known.yml
+- type: SecurityTxt
+  url: well-known/npp-australia-security.txt
+- type: Authentication
+  url: authentication/npp-australia-authentication.yml
+- type: Conformance
+  url: conformance/npp-australia-conformance.yml
+- type: Lifecycle
+  url: lifecycle/npp-australia-lifecycle.yml
+- type: Security
+  url: https://www.auspayplus.com.au/security.txt
+- type: LLMsTxt
+  url: llms/npp-australia-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

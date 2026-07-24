@@ -1,0 +1,17 @@
+generated: '2026-07-24'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.auspayplus.com.au
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 17 17:10:00 2026 GMT
+  hsts: true
+  hsts_max_age: 10886400
+domains:
+- domain: auspayplus.com.au
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject

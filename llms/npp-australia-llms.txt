@@ -1,0 +1,41 @@
+# NPP Australia (AP+)
+
+> NPP Australia operates the New Payments Platform (NPP), Australia's national real-time, data-rich, account-to-account payments rail that settles 24/7/365 across 100+ connected banks, credit unions, fintechs and government agencies. Since 2021 it has been a wholly owned subsidiary of Australian Payments Plus (AP+). NPP Australia does not sell a consumable public API itself: it publishes the ISO 20022-aligned NPP API Framework that governs how NPP Participants build NPP APIs, and AP+ runs a registration-gated developer portal plus a SWIFT-hosted sandbox. The consumable APIs are offered by NPP Participants (banks and fintechs), and via AP+ the BPAY APIs.
+
+## Overlay services and frameworks
+
+- [NPP API Framework](https://www.auspayplus.com.au/solutions/npp-for-developers): ISO 20022-aligned framework (v5.0) defining the mandatory technical approach and data attributes for APIs built on the New Payments Platform. Published as a versioned specification, not a self-serve REST API.
+- [PayTo](https://www.auspayplus.com.au/solutions/payto): Real-time digital mandated-debit overlay service; lets businesses initiate real-time debits under a pre-authorised agreement with consumer visibility and control.
+- [PayID](https://www.auspayplus.com.au/solutions/payid): Addressing service mapping a mobile number, email, ABN or organisation ID to a bank account instead of a BSB and account number.
+
+## BPAY APIs (AP+ developer portal, registration-gated)
+
+- [Validate BPAY Payment API](https://www.developers.auspayplus.com.au/apis/bpay/validate-bpay-payment-api): Validate a set of BPAY payments to generate a BPAY batch file in the format specified by a financial institution.
+- [Submit BPAY Payment API](https://www.developers.auspayplus.com.au/apis/bpay/submit-bpay-payment-api): Submit BPAY payments for processing and settlement.
+- [Generate BPAY Batch File API](https://www.developers.auspayplus.com.au/apis/bpay/generate-bpay-batch-file-api): Generate a BPAY batch file in the format specified by a Batch Payer Institution.
+- [Generate BPAY CRN API](https://www.developers.auspayplus.com.au/apis/bpay/generate-bpay-crn-api): Generate CRNs and intelligent CRNs (iCRNs) in accordance with Check Digit rules nominated against a Biller Code.
+- [Manage BPAY Biller API](https://www.developers.auspayplus.com.au/apis/bpay/manage-bpay-biller-api): Request and delete pending changes for a specific BPAY Biller.
+- [Retrieve BPAY Biller Details API](https://www.developers.auspayplus.com.au/apis/bpay/retrieve-bpay-biller-details-api): Retrieve details associated with a specified BPAY Biller, including Check Digit rules.
+- [Manage BPAY Investigation API](https://www.developers.auspayplus.com.au/apis/bpay/manage-bpay-investigation-api): Create, retrieve and manage BPAY Payment Investigations.
+
+## Developer
+
+- [Developer Portal](https://www.developers.auspayplus.com.au/): Unified AP+ developer portal (NPP + BPAY + eftpos); Auth0-backed login and registration.
+- [API Reference](https://www.developers.auspayplus.com.au/apis/): API catalog; OAS3/swagger specs served after registration.
+- [Documentation](https://www.developers.auspayplus.com.au/docs/): NPP API Framework and BPAY product docs.
+- [Sandbox](https://nppa-developer.swift.com/user/register): SWIFT-hosted NPP API sandbox.
+- [Go Live](https://www.developers.auspayplus.com.au/go-live/): Onboarding path to production.
+- [Sign Up](https://www.developers.auspayplus.com.au/api/auth/signup/)
+- [Contact / Support](https://www.developers.auspayplus.com.au/contact-us/)
+
+## Auth and security
+
+- [OpenID discovery](https://auth.developers.auspayplus.com.au/.well-known/openid-configuration): Auth0 OIDC tenant powering developer-portal login (identity scopes; not payment-API scopes).
+- [security.txt](https://www.auspayplus.com.au/security.txt): Security contact CyberSecurity@auspayplus.com.au (RFC 9116).
+
+## Corporate
+
+- [AP+ / NPP](https://www.auspayplus.com.au/solutions/npp)
+- [News](https://www.auspayplus.com.au/news)
+- [Terms of Use](https://www.auspayplus.com.au/terms-of-use)
+- [Privacy Policy](https://www.auspayplus.com.au/privacy-policy)
