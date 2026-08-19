@@ -35,7 +35,7 @@ tags:
 - Open Banking
 created: '2026-07-24'
 modified: '2026-07-24'
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 apis:
 - aid: npp-australia:npp-api-framework
   name: NPP API Framework
