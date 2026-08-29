@@ -21,6 +21,17 @@ description: >-
   implement, and AP+ runs a (registration-gated) developer portal plus a
   SWIFT-hosted API sandbox. The consumable APIs are offered by NPP Participants,
   not by NPP Australia.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Payments
